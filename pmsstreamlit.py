@@ -24,7 +24,6 @@ managers = datafile['Manager Name'].unique()
 for manager in managers:
     list_of_options.append(manager)
 list_of_options.sort()    
-st.title('Portfolio Management Services')
 option = st.sidebar.selectbox('Manager', ['All'] + list_of_options)
 if option == 'All':
     st.write("Click on column header to sort by it")
