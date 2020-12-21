@@ -6,12 +6,6 @@ Created on Thu Dec 10 15:07:54 2020
 """
 
 
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 10 15:07:54 2020
-
-@author: Administrator
-"""
 
 
 import streamlit as st
