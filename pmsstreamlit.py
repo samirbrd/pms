@@ -16,9 +16,11 @@ import matplotlib.pyplot as plt
 data = pd.read_csv('return analysis.csv')
 data.drop(data.columns[0], axis= 1, inplace = True)
 datafile = pd.read_csv('final pms data1.csv')
+data['Ann_Ret'] = data['Ann_Ret']*100
 
 st.title("Portfolio Management Service Analysis (WIP)")
 st.write("By Meet Shah")
+st.write('All returns are in %')
 list_of_options = []
 managers = datafile['Manager Name'].unique()
 for manager in managers:
