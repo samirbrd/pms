@@ -19,7 +19,6 @@ datafile = pd.read_csv('final pms data1.csv')
 
 st.title("Portfolio Management Service Analysis (WIP)")
 st.write("By Meet Shah")
-st.write("Click on column header to sort by it")
 list_of_options = []
 managers = datafile['Manager Name'].unique()
 for manager in managers:
@@ -28,6 +27,7 @@ list_of_options.sort()
 st.title('Portfolio Management Services')
 option = st.sidebar.selectbox('Manager', ['All'] + list_of_options)
 if option == 'All':
+    st.write("Click on column header to sort by it")
     st.dataframe(data)
     st.write('All data has been obtained from the Securities and Exchange Board of India. There are sometimes mistakes done by them in data collection, which affects the statistics presented. I have removed some obvious outliers, but there still might be mistakes. Please keep this in mind when viewing say the highest annualized return.')
 else:
