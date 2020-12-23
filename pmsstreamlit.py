@@ -17,7 +17,19 @@ data = pd.read_csv('return analysis.csv')
 data.drop(data.columns[0], axis= 1, inplace = True)
 datafile = pd.read_csv('final pms data1.csv')
 data['Ann_Ret'] = data['Ann_Ret']*100
-
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        background: white
+    }
+   .sidebar .sidebar-content {
+        background: grey
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.title("Portfolio Management Service Analysis (WIP)")
 st.write("By Meet Shah")
 st.write('All returns are in %')
@@ -29,7 +41,7 @@ list_of_options.sort()
 option = st.sidebar.selectbox('Manager', ['All'] + list_of_options)
 if option == 'All':
     st.write("Click on column header to sort by it")
-    st.dataframe(data)
+    st.dataframe(data.style.background_gradient(cmap = 'Blues', axis= 1))
     st.write('All data has been obtained from the Securities and Exchange Board of India. There are sometimes mistakes done by them in data collection, which affects the statistics presented. I have removed some obvious outliers, but there still might be mistakes. Please keep this in mind when viewing say the highest annualized return.')
 else:
     data = data[data['Manager']==option]
