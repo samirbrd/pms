@@ -41,7 +41,7 @@ list_of_options.sort()
 option = st.sidebar.selectbox('Manager', ['All'] + list_of_options)
 if option == 'All':
     st.write("Click on column header to sort by it")
-    st.dataframe(data.style.background_gradient(cmap = 'Blues', axis= 1))
+    st.dataframe(data.style.background_gradient(cmap = 'Blues', axis= 0))
     st.write('All data has been obtained from the Securities and Exchange Board of India. There are sometimes mistakes done by them in data collection, which affects the statistics presented. I have removed some obvious outliers, but there still might be mistakes. Please keep this in mind when viewing say the highest annualized return.')
 else:
     data = data[data['Manager']==option]
